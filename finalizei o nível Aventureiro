@@ -24,23 +24,63 @@ int main() {
     int linhaD2 = 8, colunaD2 = 8; // Navio Diagonal 2
 
     // Posiciona navio horizontal
-    for (int i = 0; i < 3; i++) {
-        tabuleiro[linhaH][colunaH + i] = navioHorizontal[i];
+    if (colunaH + 3 <= 10)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            tabuleiro[linhaH][colunaH + j] = navioHorizontal[j];
+        }
     }
+    else
+    {
+        printf("Posição do navio horizontal inválida!\n");
+    }
+        
 
     // Posiciona navio vertical
-    for (int i = 0; i < 3; i++) {
-        tabuleiro[linhaV + i][colunaV] = navioVertical[i];
+    if (linhaV + 3 <= 10)
+    {
+        for (int i = 0; i < 3; i++)        
+        {
+            tabuleiro[linhaV + i][colunaV] = navioVertical[i];
+        }
+    }
+    else
+    {
+        printf("Posição do navio Vertical inválida!\n");
+        
+        
     }
 
     // Posiciona navio Diagonal 2
-    for (int j = 0; j < 3; j++) {
-        tabuleiro[linhaD2 + j][colunaD2 + j] = navioDiagonal2[j];
+    if ((linhaD2 + 3 <= 10 && colunaD2 + 3 <= 10))
+    {    
+        for (int j = 0; j < 3; j++) 
+        {
+            tabuleiro[linhaD2 + j][colunaD2 + j] = navioDiagonal2[j];
+        }
     }
+    else
+    {
+        printf("Posição do navio Diagonal 2 inválida!\n");
+        
+        
+    }
+
     // Posiciona navio Diagonal 1
-    for (int i = 0; i < 3; i++) {
-        tabuleiro[linhaD1 + i][colunaD1 + i] = navioDiagonal1[i];
+    if ((linhaD1 + 3 <= 10 && colunaD1 + 3 <= 10))
+    {    
+        for (int j = 0; j < 3; j++) 
+        {
+            tabuleiro[linhaD1 + j][colunaD1 + j] = navioDiagonal1[j];
+        }
     }
+    else
+    {
+        printf("Posição do navio Diagonal 1 inválida!\n");
+        
+        
+    }    
 
     // 3. Exibindo o cabeçalho do tabuleiro
     printf("   TABULEIRO BATALHA NAVAL\n\n");
